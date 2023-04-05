@@ -2,8 +2,10 @@
 
 export default function cripUm() {
     
-  function cripto(mensagem, chave) {
+  function cripto(mensagem) {
     let mensagem_cripto = "";
+    var chave = 4
+
     for (let letra of mensagem) {
         if (letra.match(/[a-z]/i)) {
             let num_letra = letra.charCodeAt(0) + chave;
@@ -43,8 +45,9 @@ export default function cripUm() {
   */
 
   // Função para descriptar
-  export function descripto(mensagem_cripto_2, chave_2) {
+  export function descripto(mensagem_cripto_2) {
     let mensagem_descripto = "";
+    var chave_2 = 4
     for (let letraDes of mensagem_cripto_2) {
         if (letraDes.match(/[a-z]/i)) {
             // Aplicando a técnica de criptografia cifra de César
