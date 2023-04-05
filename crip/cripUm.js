@@ -45,7 +45,7 @@ export default function cripUm() {
   */
 
   // Função para descriptar
-  export function descripto(mensagem_cripto_2) {
+  function descripto(mensagem_cripto_2) {
     let mensagem_descripto = "";
     var chave_2 = 4
     for (let letraDes of mensagem_cripto_2) {
