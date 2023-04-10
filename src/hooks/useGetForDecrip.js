@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 
+import cripUm from '../../crip/cripUm.js'
+import cripDois from '../../crip/cripDois.js'
+import cripTres from '../../crip/cripTres.js'
+
 export function useGetForDecrip({route}) {
   const [decrip,setDecrip]=useState('')
   const [color,setColor]=useState(null)
