@@ -81,7 +81,7 @@ export function useGetForDecrip(route) {
     )
   }
 
-  return {decrip,setDecrip,color,setColor,crip, setCrip, handleConfirm,setModalVisible,modalVisible,modalView}
+  return {decrip,setDecrip,color,crip,handleConfirm,setModalVisible,modalVisible,modalView}
 }
 
 const styles=StyleSheet.create({

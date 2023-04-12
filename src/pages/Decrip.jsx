@@ -2,12 +2,11 @@ import { View,Text, StyleSheet, TextInput, TouchableOpacity, Modal } from "react
 import { MaterialIcons } from '@expo/vector-icons';
 
 import {useGetForDecrip} from '../hooks/useGetForDecrip.js'
-import { useState } from "react";
 
 
 export default function Decrip(params) {
   const route=params.route.params
-  const {decrip,setDecrip,color,setColor,crip, setCrip, handleConfirm,setModalVisible,modalVisible,modalView} = useGetForDecrip(route)
+  const {decrip,setDecrip,color,crip,handleConfirm,setModalVisible,modalVisible,modalView} = useGetForDecrip(route)
   
   return(
     <View style={[styles.container,{backgroundColor:color}]}>
@@ -61,20 +60,19 @@ const styles=StyleSheet.create({
   },
   bt:{
     width:"75%",
-    backgroundColor:"#555",
+    backgroundColor:"#1e1e1e",
     padding:15,
     borderRadius:5,
     textAlign:"center"
   },
   bt2:{
-    backgroundColor:"#555",
+    backgroundColor:"#1e1e1e",
     padding:15,
     borderRadius:5,
     position:'absolute',
     bottom:75
   },
   modal:{
-    // backgroundColor:"#1e1e1e",
     backgroundColor:"red",
     padding:15,
     borderRadius:5,
