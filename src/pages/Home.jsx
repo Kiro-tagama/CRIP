@@ -1,20 +1,8 @@
-import { useNavigation } from "@react-navigation/native";
-import { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
 import {useGetForHome} from '../hooks/useGetForHome.js'
 
 export default function Home() {
-
   const {input,setInput,handleSubmit} = useGetForHome()
-
-  // const nav = useNavigation()
-  // const [input,setInput]=useState('')
-
-  // function handleSubmit() {
-  //   const random = Math.floor(Math.random() * 3 + 1)
-  //   nav.navigate("Decrip", {txt:input,random:random})
-  //   setInput('')
-  // }
 
   return (
     <View

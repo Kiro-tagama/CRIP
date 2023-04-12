@@ -1,6 +1,5 @@
-export default function cripDois(params) {
   
-  function cripto(msg) {
+  export function cripDois(msg) {
     // Definir a relação de substituição letra-número
     const letra_num = {
       'A': 11, 'B': 14, 'C': 20, 'D': 29, 'E': 32, 'F': 38, 'G': 47, 'H': 50, 'I': 53,
@@ -34,7 +33,7 @@ export default function cripDois(params) {
 // console.log("==========================");
 // console.log("Mensagem criptografada:", mensagem_cripto);
 
-  // function descripto(mensagem) {
+  //export function decripDois(mensagem) {
   //   const num_letra = {
   //     34: 'A',46: 'B',70: 'C',106: 'D',118: 'E',142: 'F',178: 'G',190: 'H',202: 'I',
   //     226: 'J',262: 'K',278: 'L',302: 'M',338: 'N',350: 'O',374: 'P',410: 'Q',422: 'R',
@@ -62,4 +61,3 @@ export default function cripDois(params) {
 // const mensagem_descripto = descripto(mensagem);
 // console.log("==========================");
 // console.log("Mensagem descriptografada:", mensagem_descripto);
-}
