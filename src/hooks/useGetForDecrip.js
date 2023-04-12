@@ -13,6 +13,7 @@ export function useGetForDecrip(route) {
 
   const [crip, setCrip] = useState("carregando ...")
 
+  const [modalVisible, setModalVisible] = useState(false)
   // aqui dentro vai a função q vai codificar a palavra
   useEffect(()=>{
     if (route.random == 1) {
@@ -49,7 +50,7 @@ export function useGetForDecrip(route) {
     }
   }
 
-  const [modalVisible, setModalVisible] = useState(false)
+  
   
   function modalView(params) {
     const dicas=[
