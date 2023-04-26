@@ -1,33 +1,33 @@
 // Função para criptografar
 
 export function cripUm(mensagem) {
-let mensagem_cripto = "";
-var chave = 4
+    let mensagem_cripto = "";
+    var chave = 4
 
-for (let letra of mensagem) {
-    if (letra.match(/[a-z]/i)) {
-        let num_letra = letra.charCodeAt(0) + chave;
-        // Aplicando a técnica de criptografia cifra de César
-        if (letra.match(/[a-z]/)) {
-            if (num_letra > 'z'.charCodeAt(0)) {
-                num_letra -= 26;
-            } else if (num_letra < 'a'.charCodeAt(0)) {
-                num_letra += 26;
+    for (let letra of mensagem) {
+        if (letra.match(/[a-z]/i)) {
+            let num_letra = letra.charCodeAt(0) + chave;
+            // Aplicando a técnica de criptografia cifra de César
+            if (letra.match(/[a-z]/)) {
+                if (num_letra > 'z'.charCodeAt(0)) {
+                    num_letra -= 26;
+                } else if (num_letra < 'a'.charCodeAt(0)) {
+                    num_letra += 26;
+                }
+            } else {
+                if (num_letra > 'Z'.charCodeAt(0)) {
+                    num_letra -= 26;
+                } else if (num_letra < 'A'.charCodeAt(0)) {
+                    num_letra += 26;
+                }
             }
+            let nova_letra = String.fromCharCode(num_letra);
+            mensagem_cripto += nova_letra;
         } else {
-            if (num_letra > 'Z'.charCodeAt(0)) {
-                num_letra -= 26;
-            } else if (num_letra < 'A'.charCodeAt(0)) {
-                num_letra += 26;
-            }
+            mensagem_cripto += letra;
         }
-        let nova_letra = String.fromCharCode(num_letra);
-        mensagem_cripto += nova_letra;
-    } else {
-        mensagem_cripto += letra;
     }
-}
-return mensagem_cripto;
+    return mensagem_cripto;
 }
 
 /*
@@ -44,32 +44,32 @@ console.log("Guarde essa chave e só passe ela para o destinatário, pois essa c
 
 // Função para descriptar
 export function decripUm(mensagem_cripto_2) {
-let mensagem_descripto = "";
-var chave_2 = 4
-for (let letraDes of mensagem_cripto_2) {
-    if (letraDes.match(/[a-z]/i)) {
-        // Aplicando a técnica de criptografia cifra de César
-        let num_letra_2 = letraDes.charCodeAt(0) - chave_2;
-        if (letraDes.match(/[a-z]/)) {
-            if (num_letra_2 > 'z'.charCodeAt(0)) {
-                num_letra_2 += -26;
-            } else if (num_letra_2 < 'a'.charCodeAt(0)) {
-                num_letra_2 -= -26;
+    let mensagem_descripto = "";
+    var chave_2 = 4
+    for (let letraDes of mensagem_cripto_2) {
+        if (letraDes.match(/[a-z]/i)) {
+            // Aplicando a técnica de criptografia cifra de César
+            let num_letra_2 = letraDes.charCodeAt(0) - chave_2;
+            if (letraDes.match(/[a-z]/)) {
+                if (num_letra_2 > 'z'.charCodeAt(0)) {
+                    num_letra_2 += -26;
+                } else if (num_letra_2 < 'a'.charCodeAt(0)) {
+                    num_letra_2 -= -26;
+                }
+            } else {
+                if (num_letra_2 > 'Z'.charCodeAt(0)) {
+                    num_letra_2 += -26;
+                } else if (num_letra_2 < 'A'.charCodeAt(0)) {
+                    num_letra_2 -= -26;
+                }
             }
+            let letra_original = String.fromCharCode(num_letra_2);
+            mensagem_descripto += letra_original;
         } else {
-            if (num_letra_2 > 'Z'.charCodeAt(0)) {
-                num_letra_2 += -26;
-            } else if (num_letra_2 < 'A'.charCodeAt(0)) {
-                num_letra_2 -= -26;
-            }
+            mensagem_descripto += letraDes;
         }
-        let letra_original = String.fromCharCode(num_letra_2);
-        mensagem_descripto += letra_original;
-    } else {
-        mensagem_descripto += letraDes;
     }
-}
-return mensagem_descripto;
+    return mensagem_descripto;
 }
 
 /*

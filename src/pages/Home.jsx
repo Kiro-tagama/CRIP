@@ -2,19 +2,22 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-nativ
 import {useGetForHome} from '../hooks/useGetForHome.js'
 
 export default function Home() {
-  const {input,setInput,handleSubmit} = useGetForHome()
+  const {input,status,setInput,handleSubmit} = useGetForHome()
 
+  const statusColor=status ? "red" : "black" 
+  
   return (
     <View
       style={styles.container}
     >
       <Text style={styles.titulo}>Criptografia</Text>
       <TextInput
-        style={styles.input}
+        style={[styles.input, {borderColor:statusColor}]}
         placeholder="Digite aqui..."
         value={input}
         onChangeText={(e)=>setInput(e)}
       />
+      {status ? <Text>^ o campo a cima necessita ter um texto ^</Text> : null}
       <TouchableOpacity
         style={styles.bt}
         onPress={handleSubmit}
