@@ -53,8 +53,8 @@ export function useGetForDecrip(route) {
   
   function modalView(params) {
     const dicas=[
-      ["sifra de cesar","ordem 4","A = E ..."],
-      ["numeros","A = 11","11*4+10"],
+      ["cifra de césar","ordem é a raiz de 16","A = E ..."],
+      ["numeros, A = 11","pula de 3,6 e 9 e recomeça","A x 4 -10"],
       ["..."]
     ]
 
