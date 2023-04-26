@@ -4,7 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import {cripUm} from '../../crip/cripUm.js'
 import {cripDois} from '../../crip/cripDois.js'
-import cripTres from '../../crip/cripTres.js'
+import {cripTres} from '../../crip/cripTres.js'
 
 export function useGetForDecrip(route) {
   const nav = useNavigation()
@@ -26,7 +26,8 @@ export function useGetForDecrip(route) {
       setCrip(data)
     } else {
       console.log(3);
-      setCrip("palavra 3")
+      const data= cripDois(route.txt)
+      setCrip('[ '+data+' ]')
     }
 
     if (route.txt == '') {
@@ -56,7 +57,7 @@ export function useGetForDecrip(route) {
     const dicas=[
       ["cifra de césar","ordem é a raiz de 16","A =  ( a letra referente a posição da dica acima )"],
       ["numeros, A = 11","pula de 3,6 e 9 e recomeça","(numero equivalente a letra) x 4 -10]"]
-      ["..."]
+      ["Tente encontrar as chaves ou quebrar a chave pública","Procure padrões ou estruturas na mensagem criptografada que possam ajudá-lo a decifrar a mensagem usando números primos","Experimente diferentes abordagens e técnicas para resolver a criptografia até encontrar uma que funcione melhor para você."]
     ]
 
     function handleDicas(){
