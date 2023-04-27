@@ -1,5 +1,3 @@
-
-
 // Função para verificar se um número é primo
 function isPrime(n) {
   if (n <= 1) {
@@ -86,11 +84,28 @@ function generateKeys() {
 
 // Função para criptografar uma mensagem usando a chave pública
 function encrypt(publicKey, message) {
+  // const encryptedMessage = message.split('').map(char => {
+  //   const charCode = char.charCodeAt(0);
+  //   const code = BigInt(charCode) ** BigInt(e) % BigInt(n);
+  //   console.log(code);
+  //   return code;
+  // });
+  // return encryptedMessage;
   const n = publicKey[0];
   const e = publicKey[1];
   const encryptedMessage = message.split('').map(char => {
     const charCode = char.charCodeAt(0);
-    return Number(BigInt(charCode) ** BigInt(e) % BigInt(n));
+    let result = BigInt(1);
+    let base = BigInt(charCode) % BigInt(n);
+    let exponent = BigInt(e);
+    while (exponent > 0) {
+      if (exponent % BigInt(2) === BigInt(1)) {
+        result = (result * base) % BigInt(n);
+      }
+      base = (base * base) % BigInt(n);
+      exponent = exponent / BigInt(2);
+    }
+    return result;
   });
   return encryptedMessage;
 }
@@ -110,11 +125,12 @@ function decrypt(privateKey, message) {
 const [publicKey, privateKey] = generateKeys();
 
 export function cripTres(message){
-  return encrypt(publicKey, message).toString
+  return encrypt(publicKey, message)
 }
 export function decripTres(encryptedMessage){
-  return decrypt(privateKey, encryptedMessage).toString
+  return decrypt(privateKey, encryptedMessage)
 }
+
 /*
 // Mensagem a ser criptografada
 const message = "abc";
