@@ -41,7 +41,7 @@ export function useGetForDecrip(route) {
 
   function handleConfirm() {
     if (route.txt == decrip) {
-      setColor("#B3FFAE") //se for igual
+      setColor("#B3FFAE") 
       setTimeout(() => {
         nav.navigate("Home")
       }, 700);

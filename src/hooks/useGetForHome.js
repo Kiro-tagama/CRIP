@@ -12,7 +12,7 @@ export function useGetForHome() {
     }
 
     const random = Math.floor(Math.random() * 3 + 1)
-    nav.navigate("Decrip", {txt:input,random:3})
+    nav.navigate("Decrip", {txt:input,random:random})
     setInput('')
     setStatus(false)
   }
