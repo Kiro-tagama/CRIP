@@ -1,12 +1,30 @@
 {
   "expo": {
     "name": "blank",
-    "slug": "blank",
+    "slug": "crip",
     "version": "1.0.0",
     "platforms": [
       "ios",
       "android",
       "web"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "b380b555-4cf9-48a7-bf58-d0bdcab7ccd2"
+      }
+    },
+    "owner": "kirotagama",
+    "android": {
+      "package": "com.kirotagama.crip"
+    },
+    "ios": {
+      "bundleIdentifier": "com.kirotagama.crip"
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/b380b555-4cf9-48a7-bf58-d0bdcab7ccd2"
+    }
   }
 }
